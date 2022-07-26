@@ -13,10 +13,10 @@
 <tbody>
 <% @foods.each do |f|%>
 <tr>
-<td>f.name</td>
-<td>f.measurement_unit</td>
-<td>f.price</td>
-<td><%= button_to "Delete", food_path, method: :delete %></td>
+<td><%= f.name %></td>
+<td><%= f.measurement_unit %></td>
+<td><%= f.price %></td>
+<td><%= button_to "Delete", foods_path, method: :delete %></td>
 </tr>
 <% end %>
 </tbody>

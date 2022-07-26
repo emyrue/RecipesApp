@@ -9,13 +9,12 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
-    error = 'Error'
-      alert(error)
     if @food.save
-      format.html { redirect_to foods_path, notice: 'Food was successfully created.' }
+      flash[:notice] = 'Food saved successfully'
+      redirect_to foods_path
     else
-      error = 'Error'
-      alert(error)
+      flash[:alert] = 'Food not saved'
+      redirect_to foods_path
     end
   end
 

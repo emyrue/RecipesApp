@@ -1,2 +1,21 @@
-<h1>Recipe#show</h1>
-<p>Find me in app/views/recipe/show.html.erb</p>
+<h1><%= @recipe.name %></h1>
+<%= link_to "Add Food",  new_recipe_recipe_food_path(@recipe)%>
+
+<table>
+  <thead>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @recipe_foods.each do |f|%>
+    <tr>
+      <td><%= f.food.name %></td>
+      <td><%= f.quantity %></td>
+      <td><%= button_to "Delete", recipe_recipe_food_path(@recipe, f), method: :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>

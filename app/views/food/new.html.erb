@@ -1,6 +1,0 @@
-<%= form_with model: @food, url: new_food_path do |f| %>
-            <%= f.text_field :text, placeholder: "Name", rows: "8", required: true %>
-            <%= f.text_field :text, placeholder: "Measurement Unit", rows: "8", required: true %>
-            <%= f.text_field :text, placeholder: "Unit Price", rows: "8", required: true %>
-            <%= f.submit "Create Food", class: 'button' %>
-<% end %>

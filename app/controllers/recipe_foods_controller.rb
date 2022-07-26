@@ -6,11 +6,11 @@ class RecipeFoodsController < ApplicationController
 
   def create
     @recipe_food = RecipeFood.new(recipe_id: params[:recipe_id], food_id: recipe_food_params[:food_id],
-    quantity: recipe_food_params[:quantity])
+                                  quantity: recipe_food_params[:quantity])
     if @recipe_food.save
-        flash[:notice] = 'Food saved successfully'
+      flash[:notice] = 'Food saved successfully'
     else
-        flash[:alert] = 'Food not saved'
+      flash[:alert] = 'Food not saved'
     end
     redirect_to recipe_path(params[:recipe_id])
   end

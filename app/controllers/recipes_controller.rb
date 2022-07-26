@@ -13,7 +13,8 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(user_id: current_user.id, name: recipe_params['name'], preparation_time: recipe_params['preparation_time'],
+    @recipe = Recipe.new(user_id: current_user.id, name: recipe_params['name'],
+                         preparation_time: recipe_params['preparation_time'],
                          cooking_time: recipe_params['cooking_time'], description: recipe_params['description'],
                          public: recipe_params['public'])
 

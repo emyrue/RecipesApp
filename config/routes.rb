@@ -13,7 +13,16 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  resources :foods, :recipes, :inventories, except: :update
+  resources :foods, except: :update
+
+  resources :recipes, except: :update do
+    resources :recipe_foods, only: [:create, :destroy, :new]
+  end
+
+  resources :inventories, except: :update do
+    resources :inventory_foods, only: [:create, :destroy, :new]
+  end
+
   get "public_recipes", to: "home#public_recipes"
 
   # scope module: 'public-recipes' do

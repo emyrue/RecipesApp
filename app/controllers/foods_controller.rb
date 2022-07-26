@@ -11,11 +11,10 @@ class FoodsController < ApplicationController
     @food = Food.new(food_params)
     if @food.save
       flash[:notice] = 'Food saved successfully'
-      redirect_to foods_path
     else
       flash[:alert] = 'Food not saved'
-      redirect_to foods_path
     end
+    redirect_to foods_path
   end
 
   def destroy
@@ -23,6 +22,8 @@ class FoodsController < ApplicationController
     @food.destroy
     redirect_to foods_path
   end
+
+  private
 
   def food_params
     params.require(:food).permit(:name, :measurement_unit, :price)

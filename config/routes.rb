@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   }
 
   resources :foods, :recipes, :inventories, except: :update
+  get "public_recipes", to: "home#public_recipes"
 
   # scope module: 'public-recipes' do
   #   resources :recipes, only: [:index, :show]

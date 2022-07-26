@@ -1,0 +1,11 @@
+<h1>New Recipe</h1>
+
+<%= form_with model: @recipe, local: true, method: :post, scope: :recipe do |f| %>
+    <%= f.text_field :name, placeholder: "Name", rows: "8", required: true %>
+    <%= f.text_field :preparation_time, placeholder: "Preparation Time", rows: "8", required: true %>
+    <%= f.text_field :cooking_time, placeholder: "Cooking Time", rows: "8", required: true %>
+    <%= f.text_area :description, placeholder: "Description", rows: "8", required: true %>
+    <%= f.label :public %>
+    <%= f.check_box :public %>
+    <%= f.submit "Create Recipe", class: 'button' %>
+<% end %>

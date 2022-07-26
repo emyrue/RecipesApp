@@ -1,2 +1,4 @@
-<h1>Inventory#new</h1>
-<p>Find me in app/views/inventory/new.html.erb</p>
+<%= form_with model: @inventory, local: true, method: :post, scope: :inventory do |f| %>
+            <%= f.text_field :name, placeholder: "Name", rows: "8", required: true %>
+            <%= f.submit "Create Inventory", class: 'button' %>
+<% end %>

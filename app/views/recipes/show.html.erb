@@ -1,6 +1,10 @@
+<%= link_to "Home", root_path, class: "home-btn" %>
+
 <h1><%= @recipe.name %></h1>
-<%= link_to "Add Food",  new_recipe_recipe_food_path(@recipe), class: "food-btn" %>
-<%= link_to "Shopping List", recipe_new_shopping_list_path(@recipe), data:{turbo_frame: "modal"}, class: "shopping-list-btn" %>
+<% if can? :create, @recipe_food %>
+  <%= link_to "Add Food",  new_recipe_recipe_food_path(@recipe), class: "food-btn" %>
+<% end %>
+<%= link_to "Shopping List", recipe_new_shopping_list_path(@recipe), data:{turbo_frame: "modal"}, class: "food-btn" %>
 
 <hr />
 <table>
@@ -17,7 +21,7 @@
       <td><%= f.food.name %></td>
       <td><%= f.quantity %></td>
       <td>
-      <% if can? :destroy, post %>
+      <% if can? :destroy, @recipe_foods %>
         <%= button_to "Delete", recipe_recipe_food_path(@recipe, f), method: :delete %>
        <% end %>
       </td>

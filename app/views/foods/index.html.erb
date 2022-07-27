@@ -1,3 +1,4 @@
+<%= link_to "Home", root_path, class: "home-btn" %>
 <div>
 <h1>Food</h1>
 
@@ -25,9 +26,7 @@
 <td><%= f.price %></td>
 
 <td>
-  <% if can? :destroy, @foods %>
     <%= button_to "Delete", food_path(f), method: :delete %>
-  <% end %>
 </td>
 </tr>
 <% end %>

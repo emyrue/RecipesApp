@@ -119,38 +119,6 @@ hr {
   background-color: #000;
   margin-top: 20px;
   height: 2px;
-  -webkit-animation: thread2 10s infinite;
-  -moz-animation: thread2 10s infinite;
-  -o-animation: thread2 10s infinite;
-  animation: thread2 10s infinite;
-}
-
-@-webkit-keyframes thread2 {
-  0% { width: 100%; }
-  50% { width: 100%; }
-  80% { width: 0; }
-  100% { width: 100%; }
-}
-
-@-moz-keyframes thread2 {
-  0% { width: 100%; }
-  50% { width: 100%; }
-  80% { width: 0; }
-  100% { width: 100%; }
-}
-
-@-o-keyframes thread2 {
-  0% { width: 100%; }
-  50% { width: 100%; }
-  80% { width: 0; }
-  100% { width: 100%; }
-}
-
-@keyframes thread2 {
-  0% { width: 100%; }
-  50% { width: 100%; }
-  80% { width: 0; }
-  100% { width: 100%; }
 }
 
 /* Recipes */
@@ -320,4 +288,24 @@ input[type=submit]:hover {
 
 .show-modal {
     display: flex !important;
+}
+
+.home-btn {
+  text-decoration: none;
+  color: #000;
+  border: 2px solid #000;
+  padding: 5px;
+  transition: all 500ms;
+  width: 300px;
+  position: fixed;
+  right: 5px;
+  top: 5px;
+  text-align: center;
+}
+
+.home-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  font-size: 20px;
 }

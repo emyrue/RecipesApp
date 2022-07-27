@@ -39,7 +39,9 @@ class RecipesController < ApplicationController
   end
 
   def create_new_shopping_list
-    redirect_to shopping_list_path(params.permit(:recipe_id), params.permit(:inventory_id))
+    url = "#{shopping_list_path}?recipe_id=#{params.permit(:recipe_id)[:recipe_id]}"
+    url += "&inventory_id=#{params.permit(:inventory_id)[:inventory_id]}"
+    redirect_to url
   end
 
   private

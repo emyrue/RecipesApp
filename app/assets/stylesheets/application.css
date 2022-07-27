@@ -119,10 +119,10 @@ hr {
   background-color: #000;
   margin-top: 20px;
   height: 2px;
-  -webkit-animation: thread2 3s infinite;
-  -moz-animation: thread2 3s infinite;
-  -o-animation: thread2 3s infinite;
-  animation: thread2 3s infinite;
+  -webkit-animation: thread2 10s infinite;
+  -moz-animation: thread2 10s infinite;
+  -o-animation: thread2 10s infinite;
+  animation: thread2 10s infinite;
 }
 
 @-webkit-keyframes thread2 {

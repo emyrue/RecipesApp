@@ -16,7 +16,11 @@
     <tr>
       <td><%= f.food.name %></td>
       <td><%= f.quantity %></td>
-      <td><%= button_to "Delete", recipe_recipe_food_path(@recipe, f), method: :delete %></td>
+      <td>
+      <% if can? :destroy, post %>
+        <%= button_to "Delete", recipe_recipe_food_path(@recipe, f), method: :delete %>
+       <% end %>
+      </td>
     </tr>
   <% end %>
   </tbody>

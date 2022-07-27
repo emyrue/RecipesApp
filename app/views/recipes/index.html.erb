@@ -6,7 +6,9 @@
   <div class="recipe-container">
     <div class="recipe-actions">
       <p class="recipe-name" ><%= recipe.name %></p>
-      <%= button_to 'Delete Recipe', recipe_path(recipe), method: :delete %>
+       <% if can? :destroy, recipe %>
+        <%= button_to 'Delete Recipe', recipe_path(recipe), method: :delete %>
+       <% end %>
       <%= link_to 'View Recipe', recipe_path(recipe), class: "view-recipe-btn" %>
     </div>
 

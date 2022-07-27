@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :foods, except: :update
 
   resources :recipes, except: :update do
+    get "new_shopping_list", to: "recipes#new_shopping_list"
     resources :recipe_foods, only: [:create, :destroy, :new]
   end
 
@@ -25,7 +26,6 @@ Rails.application.routes.draw do
 
   get "public_recipes", to: "home#public_recipes"
   post "shopping_list", to: "home#shopping_list"
-  get "new_shopping_list", to: "home#new_shopping_list"
   # scope module: 'public-recipes' do
   #   resources :recipes, only: [:index, :show]
   # end

@@ -33,6 +33,10 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
+  def new_shopping_list
+    @recipe = Recipe.find(params[:recipe_id])
+  end
+
   private
 
   def recipe_params

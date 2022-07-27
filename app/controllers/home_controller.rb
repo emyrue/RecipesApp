@@ -9,10 +9,6 @@ class HomeController < ApplicationController
     @recipes = Recipe.includes([:user]).where(public: true)
   end
 
-  def new_shopping_list
-
-  end
-
   def shopping_list
 
   end

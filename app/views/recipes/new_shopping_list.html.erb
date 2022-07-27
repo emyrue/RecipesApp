@@ -1,3 +1,9 @@
 <%= turbo_frame_tag :modal do %>
 <h1>New shopping list</h1>
+<%= form_with url: recipe_create_new_shopping_list_path(@recipe), local: true, method: :post, data: { turbo: false } do |f| %>
+      <div class="form-group">
+        <%= f.select :inventory_id, @inventories.map { |t| [t.name, t.id]}, {}, class: "form-control" %>
+      </div>
+    <%= f.submit "Create recipe", class: 'button' %>
+  <% end %>
 <% end %>

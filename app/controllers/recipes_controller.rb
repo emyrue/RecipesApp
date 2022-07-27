@@ -35,6 +35,11 @@ class RecipesController < ApplicationController
 
   def new_shopping_list
     @recipe = Recipe.find(params[:recipe_id])
+    @inventories = Inventory.where(user_id: current_user.id)
+  end
+
+  def create_new_shopping_list
+    redirect_to shopping_list_path(params.permit(:recipe_id), params.permit(:inventory_id))
   end
 
   private

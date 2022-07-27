@@ -56,10 +56,11 @@
 }
 
 .nav-li {
-  transition: all 500ms;}
+  transition: all 500ms;
+}
 
 .nav-li:hover {
-  font-size:60px;
+  font-size: 60px;
 }
 
 /* food index */
@@ -80,13 +81,18 @@
   font-size: 20px;
 }
 
-table, th, td {
+th,
+td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 5px;
+  justify-content: center;
 }
 
 table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
   margin-top: 10px;
 }
 
@@ -110,40 +116,42 @@ hr {
   margin-top: 20px;
   height: 2px;
   -webkit-animation: thread2 3s infinite;
-  	-moz-animation:    thread2 3s infinite;
-  	-o-animation:      thread2 3s infinite;
-  	animation:         thread2 3s infinite;	
+  -moz-animation: thread2 3s infinite;
+  -o-animation: thread2 3s infinite;
+  animation: thread2 3s infinite;
 }
 
 @-webkit-keyframes thread2 {
-  0%   { width: 100%; }
+  0% { width: 100%; }
   50% { width: 100%; }
-  80% { width: 0px;}
-  100%{ width:100%;}
+  80% { width: 0; }
+  100% { width: 100%; }
 }
+
 @-moz-keyframes thread2 {
-  0%   { width: 100%; }
+  0% { width: 100%; }
   50% { width: 100%; }
-  80% { width: 0px;}
-  100%{ width:100%;}
+  80% { width: 0; }
+  100% { width: 100%; }
 }
+
 @-o-keyframes thread2 {
-  0%   { width: 100%; }
+  0% { width: 100%; }
   50% { width: 100%; }
-  80% { width: 0px;}
-  100%{ width:100%;}
+  80% { width: 0; }
+  100% { width: 100%; }
 }
+
 @keyframes thread2 {
-  0%   { width: 100%; }
+  0% { width: 100%; }
   50% { width: 100%; }
-  80% { width: 0px;}
-  100%{ width:100%;}
+  80% { width: 0; }
+  100% { width: 100%; }
 }
 
 /* Recipes */
 
 .recipe-container {
-  margin-top: 30px;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -215,7 +223,6 @@ hr {
   font-size: 20px;
 }
 
-
 .view-inventory-btn {
   text-decoration: none;
   border: 1px solid #000;
@@ -253,7 +260,6 @@ hr {
 /* forms */
 
 form {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 10px;

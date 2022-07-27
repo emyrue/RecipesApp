@@ -1,9 +1,17 @@
 <h1>Public Recipes</h1>
 
+<hr />
+
 <% @recipes.each do |recipe| %>
-  <div>
-    <%= recipe.name %>
-    <%= recipe.description %>
-    <span>By: <%= recipe.user.name %></span>
+   <div class="recipe-container">
+    <div class="recipe-actions">
+      <p class="recipe-name" ><%= recipe.name %></p>
+      <span>By: <%= recipe.user.name %></span>
+      <%= link_to 'View Recipe', recipe_path(recipe), class: "view-recipe-btn" %>
+    </div>
+
+    <div>
+      <%= recipe.description %>
+    </div>
   </div>
 <% end %>

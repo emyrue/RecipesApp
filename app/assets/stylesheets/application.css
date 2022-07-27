@@ -1,15 +1,294 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;700;800&family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto+Slab:wght@900&family=Special+Elite&display=swap');
+
+* {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+}
+
+/* home-page */
+
+.welcome {
+  text-align: center;
+}
+
+.login-bar {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+  border-right: 1px solid #000;
+  padding-right: 10px;
+}
+
+.link-invent {
+  border: none;
+}
+
+.sign-btn {
+  text-decoration: none;
+  color: #000;
+  border: 2px solid #000;
+  padding: 5px;
+  transition: all 500ms;
+}
+
+.sign-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  font-size: 20px;
+}
+
+.navigation {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-size: 50px;
+  justify-content: center;
+}
+
+.nav-li {
+  transition: all 500ms;}
+
+.nav-li:hover {
+  font-size:60px;
+}
+
+/* food index */
+
+.food-btn {
+  text-decoration: none;
+  color: #000;
+  border: 2px solid #000;
+  padding: 5px;
+  transition: all 500ms;
+  margin-bottom: 50px;
+}
+
+.food-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  font-size: 20px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+table {
+  margin-top: 10px;
+}
+
+button {
+  border: 1px solid #000;
+  background: #fff;
+  padding: 5px;
+}
+
+button:hover {
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+}
+
+hr {
+  color: #000;
+  background-color: #000;
+  margin-top: 20px;
+  height: 2px;
+  -webkit-animation: thread2 3s infinite;
+  	-moz-animation:    thread2 3s infinite;
+  	-o-animation:      thread2 3s infinite;
+  	animation:         thread2 3s infinite;	
+}
+
+@-webkit-keyframes thread2 {
+  0%   { width: 100%; }
+  50% { width: 100%; }
+  80% { width: 0px;}
+  100%{ width:100%;}
+}
+@-moz-keyframes thread2 {
+  0%   { width: 100%; }
+  50% { width: 100%; }
+  80% { width: 0px;}
+  100%{ width:100%;}
+}
+@-o-keyframes thread2 {
+  0%   { width: 100%; }
+  50% { width: 100%; }
+  80% { width: 0px;}
+  100%{ width:100%;}
+}
+@keyframes thread2 {
+  0%   { width: 100%; }
+  50% { width: 100%; }
+  80% { width: 0px;}
+  100%{ width:100%;}
+}
+
+/* Recipes */
+
+.recipe-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  border: 2px solid #000;
+  padding: 10px;
+  width: fit-content;
+  align-items: center;
+}
+
+.recipe-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.view-recipe-btn {
+  margin-top: 10px;
+  text-decoration: none;
+  border: 1px solid #000;
+  color: #000;
+  background: #fff;
+  padding: 5px;
+  width: 89px;
+  font-size: small;
+}
+
+.view-recipe-btn:hover {
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.recipe-btn {
+  text-decoration: none;
+  color: #000;
+  border: 2px solid #000;
+  padding: 5px;
+  transition: all 500ms;
+  margin-bottom: 50px;
+}
+
+.recipe-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  font-size: 20px;
+}
+
+.recipe-name {
+  font-size: 20px;
+}
+
+/* inventory */
+
+.inventory-btn {
+  text-decoration: none;
+  color: #000;
+  border: 2px solid #000;
+  padding: 5px;
+  transition: all 500ms;
+  margin-bottom: 50px;
+}
+
+.inventory-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  font-size: 20px;
+}
+
+
+.view-inventory-btn {
+  text-decoration: none;
+  border: 1px solid #000;
+  color: #000;
+  background: #fff;
+  padding: 5px;
+  width: 100px;
+  font-size: small;
+  margin-left: 10px;
+}
+
+.view-inventory-btn:hover {
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.inventory-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 2px solid #000;
+  padding: 20px;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+.inventory-name {
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+/* forms */
+
+form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  border: 1px solid #000;
+  width: 300px;
+  padding: 5px;
+}
+
+textarea {
+  border: 1px solid #000;
+  width: 300px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+}
+
+input[type=submit] {
+  text-decoration: none;
+  color: #000;
+  border: 2px solid #000;
+  padding: 5px;
+  transition: all 500ms;
+  margin-bottom: 50px;
+  background-color: #fff;
+}
+
+input[type=submit]:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  font-size: 20px;
+  cursor: pointer;
+}

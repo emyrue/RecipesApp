@@ -1,3 +1,7 @@
+<h1>New Inventory</h1>
+
+<hr />
+
 <%= form_with model: @inventory, local: true, method: :post, scope: :inventory do |f| %>
             <%= f.text_field :name, placeholder: "Name", rows: "8", required: true %>
             <%= f.submit "Create Inventory", class: 'button' %>

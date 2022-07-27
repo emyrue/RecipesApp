@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -11,12 +9,11 @@ class Ability
       can :manage, :all
     else
       can :manage, Inventory, user_id: user.id
-      can :manage, Food, user_id: user.id
+      can :manage, Food
+      can :manage, RecipeFood, user_id: user.id
+      can :manage, InventoryFood, user_id: user.id
       can :manage, Recipe, user_id: user.id
       can :read, :all
-      can :add, Food
-      can :add, Recipe
-      can :add, Inventory
     end
   end
 end

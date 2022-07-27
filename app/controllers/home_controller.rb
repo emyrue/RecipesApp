@@ -19,20 +19,14 @@ class HomeController < ApplicationController
       if defined?(inventory_food.quantity)
         quantity = recipe_food.quantity - inventory_food.quantity
         price = quantity * recipe_food.food.price
-        if quantity > 0
-          hash = {
-            name: recipe_food.food.name,
-            quantity: quantity,
-            price: price,
-          }
-        end
+        hash = { name: recipe_food.food.name, quantity: quantity, price: price } if quantity.positive?
       else
         quantity = recipe_food.quantity
         price = quantity * recipe_food.food.price
         hash = {
           name: recipe_food.food.name,
           quantity: quantity,
-          price: price,
+          price: price
         }
       end
       @needed_foods << hash

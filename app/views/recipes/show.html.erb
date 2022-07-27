@@ -1,7 +1,8 @@
 <h1><%= @recipe.name %></h1>
 <%= link_to "Add Food",  new_recipe_recipe_food_path(@recipe), class: "food-btn" %>
-<hr />
+<%= link_to "Shopping List", new_shopping_list_path, data:{turbo_frame: "modal"}, class: "shopping-list-btn" %>
 
+<hr />
 <table>
   <thead>
   <tr>

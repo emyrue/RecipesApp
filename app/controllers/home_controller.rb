@@ -8,4 +8,12 @@ class HomeController < ApplicationController
   def public_recipes
     @recipes = Recipe.includes([:user]).where(public: true)
   end
+
+  def new_shopping_list
+
+  end
+
+  def shopping_list
+
+  end
 end

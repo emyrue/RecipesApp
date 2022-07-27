@@ -1,6 +1,13 @@
 <div>
 <h1>Food</h1>
-<%= link_to "Add Food", new_food_path %>
+
+<div>
+<%= link_to "Add Food", new_food_path, class: "food-btn" %>
+</div>
+
+<hr />
+
+<div>
 <table>
 <thead>
 <tr>
@@ -21,4 +28,6 @@
 <% end %>
 </tbody>
 </table>
+</div>
+
 </div>

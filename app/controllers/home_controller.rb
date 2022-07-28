@@ -18,19 +18,13 @@ class HomeController < ApplicationController
 
     @recipe.recipe_foods.includes([:food]).each do |recipe_food|
       inventory_food = @inventory.inventory_foods.find_by(food_id: recipe_food.food.id)
-      if defined?(inventory_food.quantity)
-        quantity = recipe_food.quantity - inventory_food.quantity
-        price = quantity * recipe_food.food.price
-        hash = { name: recipe_food.food.name, quantity: quantity, price: price } if quantity.positive?
-      else
-        quantity = recipe_food.quantity
-        price = quantity * recipe_food.food.price
-        hash = {
-          name: recipe_food.food.name,
-          quantity: quantity,
-          price: price
-        }
-      end
+      quantity = if defined?(inventory_food.quantity)
+                   recipe_food.quantity - inventory_food.quantity
+                 else
+                   recipe_food.quantity
+                 end
+      price = quantity * recipe_food.food.price
+      hash = { name: recipe_food.food.name, quantity: quantity, price: price } if quantity.positive?
       @total_food += quantity
       @total_price += price
       @needed_foods << hash

@@ -12,7 +12,8 @@ class Ability
       can :manage, Food
       can :manage, RecipeFood, user_id: user.id
       can :manage, InventoryFood, user_id: user.id
-      can :manage, Recipe, user_id: user.id
+      can :create, Recipe
+      can :destroy, Recipe, user_id: user.id
       can :read, :all
     end
   end

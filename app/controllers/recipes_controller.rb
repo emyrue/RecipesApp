@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @recipes = Recipe.includes([:user]).where(user_id: current_user.id)
   end
@@ -10,6 +12,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    authorize! :create, @recipe
   end
 
   def create
@@ -17,6 +20,7 @@ class RecipesController < ApplicationController
                          preparation_time: recipe_params['preparation_time'],
                          cooking_time: recipe_params['cooking_time'], description: recipe_params['description'],
                          public: recipe_params['public'])
+    authorize! :create, @recipe
 
     if @recipe.save
       flash[:notice] = 'Recipe saved successfully'
@@ -36,6 +40,7 @@ class RecipesController < ApplicationController
   def new_shopping_list
     @recipe = Recipe.find(params[:recipe_id])
     @inventories = Inventory.where(user_id: current_user.id)
+    authorize! :create, @recipe
   end
 
   def create_new_shopping_list

@@ -8,7 +8,7 @@ RSpec.describe Inventory, type: :model do
     @inventory = Inventory.create(name: 'myInventory', user_id: @user.id)
   end
 
-  it "Name has to be present" do
+  it 'Name has to be present' do
     @inventory.name = nil
     expect(@inventory).to_not be_valid
   end

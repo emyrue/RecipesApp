@@ -1,7 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe "Recipes", type: :request do
-  describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
-  end
+ before(:example) do
+  @user = User.new(name: "Thomas", email: "thomas@thomas.com", password: "emilythinksimcool",
+    password_confirmation: "emilythinksimcool")
+  @user.skip_confirmation!
+  @user.save!
+  sign_in @user
+
+ end
+  
+    describe "GET 'index'" do
+      it "should be successful" do
+        get recipes_path
+        expect(response).to have_http_status(:ok)
+      end
+    end
 end

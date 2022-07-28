@@ -1,3 +1,5 @@
+<%= link_to "Home", root_path, class: "home-btn" %>
+
 <h1>Add Food to Recipe</h1>
 
 <%= form_with model: @recipe_food, url: recipe_recipe_foods_path(params[:recipe_id]), local: true, method: :post, scope: :recipe_food do |f| %>

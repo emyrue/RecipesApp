@@ -7,6 +7,10 @@
 
 /* home-page */
 
+.body {
+  position: relative;
+}
+
 .welcome {
   text-align: center;
 }
@@ -115,38 +119,6 @@ hr {
   background-color: #000;
   margin-top: 20px;
   height: 2px;
-  -webkit-animation: thread2 3s infinite;
-  -moz-animation: thread2 3s infinite;
-  -o-animation: thread2 3s infinite;
-  animation: thread2 3s infinite;
-}
-
-@-webkit-keyframes thread2 {
-  0% { width: 100%; }
-  50% { width: 100%; }
-  80% { width: 0; }
-  100% { width: 100%; }
-}
-
-@-moz-keyframes thread2 {
-  0% { width: 100%; }
-  50% { width: 100%; }
-  80% { width: 0; }
-  100% { width: 100%; }
-}
-
-@-o-keyframes thread2 {
-  0% { width: 100%; }
-  50% { width: 100%; }
-  80% { width: 0; }
-  100% { width: 100%; }
-}
-
-@keyframes thread2 {
-  0% { width: 100%; }
-  50% { width: 100%; }
-  80% { width: 0; }
-  100% { width: 100%; }
 }
 
 /* Recipes */
@@ -203,6 +175,10 @@ hr {
 
 .recipe-name {
   font-size: 20px;
+}
+
+.recipe_time {
+  padding-bottom: 20px;
 }
 
 /* inventory */
@@ -297,4 +273,37 @@ input[type=submit]:hover {
   background: #000;
   font-size: 20px;
   cursor: pointer;
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  left: 300px;
+  top: 200px;
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+}
+
+.home-btn {
+  text-decoration: none;
+  color: #000;
+  border: 2px solid #000;
+  padding: 5px;
+  transition: all 500ms;
+  width: 300px;
+  position: fixed;
+  right: 5px;
+  top: 5px;
+  text-align: center;
+}
+
+.home-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  font-size: 20px;
 }

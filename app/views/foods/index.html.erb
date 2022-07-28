@@ -1,3 +1,4 @@
+<%= link_to "Home", root_path, class: "home-btn" %>
 <div>
 <h1>Food</h1>
 
@@ -23,7 +24,10 @@
 <td><%= f.name %></td>
 <td><%= f.measurement_unit %></td>
 <td><%= f.price %></td>
-<td><%= button_to "Delete", food_path(f), method: :delete %></td>
+
+<td>
+    <%= button_to "Delete", food_path(f), method: :delete %>
+</td>
 </tr>
 <% end %>
 </tbody>

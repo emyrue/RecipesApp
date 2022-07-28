@@ -1,3 +1,5 @@
+<%= link_to "Home", root_path, class: "home-btn" %>
+
 <h1>Inventory</h1>
 <%= link_to "Add inventory", new_inventory_path, class: "inventory-btn" %>
 <hr />
@@ -5,7 +7,9 @@
 <% @inventories.each do |i|%>
  <div class="inventory-container">
   <p class="inventory-name"><%= i.name %></p>
-  <%= button_to "Delete", inventory_path(i), method: :delete %>
+  <% if can? :destroy, @inventories %>
+    <%= button_to "Delete", inventory_path(i), method: :delete %>
+  <% end %>
    <%= link_to "View Inventory", inventory_path(i), class: "view-inventory-btn" %>
  </div>
 <% end %>

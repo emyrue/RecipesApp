@@ -1,3 +1,5 @@
+<%= link_to "Home", root_path, class: "home-btn" %>
+
 <h1>Add Food to Inventory</h1>
 
 <%= form_with model: @inventory_food, url: inventory_inventory_foods_path(params[:inventory_id]), local: true, method: :post, scope: :inventory_food do |f| %>

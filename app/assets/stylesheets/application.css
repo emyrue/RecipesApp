@@ -177,6 +177,10 @@ hr {
   font-size: 20px;
 }
 
+.recipe_time {
+  padding-bottom: 20px;
+}
+
 /* inventory */
 
 .inventory-btn {

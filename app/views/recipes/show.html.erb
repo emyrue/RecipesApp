@@ -5,6 +5,9 @@
 <%= link_to "Home", root_path, class: "home-btn" %>
 
 <h1><%= @recipe.name %></h1>
+<div class="recipe_time">Preparation Time: <%= @recipe.preparation_time %></div>
+<div class="recipe_time">Cooking Time: <%= @recipe.cooking_time %></div>
+<div class="recipe_time"><%= @recipe.description %></div>
 <% if can? :create, @recipe %>
   <%= link_to "Add Food",  new_recipe_recipe_food_path(@recipe), class: "food-btn" %>
 <% end %>

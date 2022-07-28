@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-  load_and_authorize_resource
 
   def index
     @recipes = Recipe.includes([:user]).where(user_id: current_user.id)

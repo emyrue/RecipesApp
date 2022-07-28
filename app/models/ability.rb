@@ -10,7 +10,7 @@ class Ability
     else
       can :manage, Inventory, user_id: user.id
       can :manage, Food
-      can :manage, RecipeFood, user_id: user.id
+      can :manage, RecipeFood
       can :manage, InventoryFood, user_id: user.id
       can :create, Recipe
       can :destroy, Recipe, user_id: user.id

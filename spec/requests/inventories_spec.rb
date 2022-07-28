@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Recipes', type: :request do
+RSpec.describe 'Inventories', type: :request do
   before(:example) do
     @user = User.new(name: 'Thomas', email: 'thomas@thomas.com', password: 'emilythinksimcool',
                      password_confirmation: 'emilythinksimcool')
@@ -9,19 +9,17 @@ RSpec.describe 'Recipes', type: :request do
     sign_in @user
   end
 
-  describe "GET 'index'" do
+  describe 'GET /index' do
     it 'should be successful' do
-      get recipes_path
+      get inventories_path
       expect(response).to have_http_status(:ok)
     end
   end
 
-  describe "GET 'show'" do
+  describe 'GET /show' do
     it 'should be successful' do
-      @recipe = Recipe.create(name: 'Orange Chicken', preparation_time: '30 min', cooking_time: '30 min',
-                              description: 'Orange chicken',
-                              public: false, user_id: @user.id)
-      get recipe_path(@recipe)
+      @inventory = Inventory.create(name: 'myInventory', user_id: @user.id)
+      get inventory_path(@inventory)
       expect(response).to have_http_status(:ok)
     end
   end

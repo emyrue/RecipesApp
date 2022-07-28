@@ -1,11 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :update_allowed_parameters, if: :devise_controller?
+  before_action :authenticate_user!
 
   protected
 
   def after_sign_in_path_for(resource)
     if resource.is_a?(User)
-      foods_path(resource)
+      root_path(resource)
     else
       super
     end

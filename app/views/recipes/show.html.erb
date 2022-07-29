@@ -1,0 +1,38 @@
+<div class="modal">
+  <%= turbo_frame_tag :modal %>
+</div>
+
+<%= link_to "Home", root_path, class: "home-btn" %>
+
+<h1><%= @recipe.name %></h1>
+<div class="recipe_time">Preparation Time: <%= @recipe.preparation_time %></div>
+<div class="recipe_time">Cooking Time: <%= @recipe.cooking_time %></div>
+<div class="recipe_time"><%= @recipe.description %></div>
+<% if can? :create, @recipe %>
+  <%= link_to "Add Food",  new_recipe_recipe_food_path(@recipe), class: "food-btn" %>
+<% end %>
+<%= link_to "Shopping List", recipe_new_shopping_list_path(@recipe), data:{turbo_frame: "modal"}, class: "food-btn" %>
+
+<hr />
+<table>
+  <thead>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @recipe_foods.each do |f|%>
+    <tr>
+      <td><%= f.food.name %></td>
+      <td><%= f.quantity %></td>
+      <td>
+      <% if can? :destroy, @recipe %>
+        <%= button_to "Delete", recipe_recipe_food_path(@recipe, f), method: :delete %>
+       <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>

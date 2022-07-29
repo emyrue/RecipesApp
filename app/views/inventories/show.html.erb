@@ -1,0 +1,28 @@
+<%= link_to "Home", root_path, class: "home-btn" %>
+
+<h1><%= @inventory.name %></h1>
+<%= link_to "Add Food",  new_inventory_inventory_food_path(@inventory), class: "food-btn" %>
+<hr />
+
+<table>
+  <thead>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @inventory_foods.each do |f|%>
+    <tr>
+      <td><%= f.food.name %></td>
+      <td><%= f.quantity %></td>
+      <td>
+      <% if can? :destroy, post %>
+        <%= button_to "Delete", inventory_inventory_food_path(@inventory, f), method: :delete %>
+      <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>

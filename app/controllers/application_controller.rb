@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :update_allowed_parameters, if: :devise_controller?
   before_action :authenticate_user!
-  before_filter :stealth_mode
+  before_action :stealth_mode
 
   protected
 

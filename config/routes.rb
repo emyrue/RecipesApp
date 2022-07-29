@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   # get 'inventory/create'
   # get 'inventory/destroy'
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
 
   resources :foods, except: :update
